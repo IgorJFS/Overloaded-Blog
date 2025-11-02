@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { slug: 'understanding-burnout-2025' } },
+    { params: { slug: 'mental-health-digital-age' } },
+    { params: { slug: 'setting-boundaries-saying-no' } },
+    { params: { slug: 'remote-work-reality' } },
+    { params: { slug: 'hustle-culture-health-cost' } },
+    { params: { slug: 'recovery-strategies-burnout' } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+// Sample post data (in a real app, this would come from your content collection)
+const posts: Record<string, any> = {
+  'understanding-burnout-2025': {
+    title: "Understanding Burnout in 2025: A Comprehensive Guide",
+    excerpt: "An in-depth exploration of how modern work culture contributes to burnout and what we can do about it.",
+    date: "2025-11-02",
+    readTime: "8 min read",
+    category: "Burnout",
+    emoji: "🔥",
+  },
+  'mental-health-digital-age': {
+    title: "The Silent Epidemic: Mental Health in the Digital Age",
+    excerpt: "How constant connectivity and social media are affecting our mental well-being.",
+    date: "2025-10-28",
+    readTime: "6 min read",
+    category: "Mental Health",
+    emoji: "🧠",
+  },
+  'setting-boundaries-saying-no': {
+    title: "Setting Boundaries: The Art of Saying No",
+    excerpt: "Why saying no is essential for your well-being and how to do it effectively without guilt.",
+    date: "2025-10-25",
+    readTime: "5 min read",
+    category: "Work-Life Balance",
+    emoji: "⚖️",
+  },
+  'remote-work-reality': {
+    title: "Remote Work Reality: When Home Becomes the Office",
+    excerpt: "The challenges and opportunities of remote work culture.",
+    date: "2025-10-20",
+    readTime: "7 min read",
+    category: "Work Culture",
+    emoji: "🏠",
+  },
+  'hustle-culture-health-cost': {
+    title: "Hustle Culture: When Success Costs Your Health",
+    excerpt: "Examining the toxic side of hustle culture and why constant productivity isn't the path to success.",
+    date: "2025-10-15",
+    readTime: "6 min read",
+    category: "Society",
+    emoji: "💼",
+  },
+  'recovery-strategies-burnout': {
+    title: "Recovery Strategies: Bouncing Back from Burnout",
+    excerpt: "Practical, evidence-based strategies for recovering from burnout.",
+    date: "2025-10-10",
+    readTime: "9 min read",
+    category: "Recovery",
+    emoji: "🌱",
+  },
+};
+
+const post = posts[slug as string] || posts['understanding-burnout-2025'];
+---
+
+<Layout title={post.title} description={post.excerpt}>
+  <!-- Article Header -->
+  <article class="py-16 sm:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <!-- Back Button -->
+      <a 
+        href="/blog" 
+        class="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-100 transition-colors mb-8 group"
+      >
+        <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span>Back to Blog</span>
+      </a>
+
+      <!-- Article Meta -->
+      <div class="mb-8">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 font-medium text-sm">
+            {post.category}
+          </span>
+          <div class="flex items-center gap-2 text-neutral-500 text-sm">
+            <time datetime={post.date}>
+              {new Date(post.date).toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+              })}
+            </time>
+            <span>•</span>
+            <span>{post.readTime}</span>
+          </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-100 mb-6">
+          {post.title}
+        </h1>
+
+        <p class="text-xl text-neutral-400 leading-relaxed">
+          {post.excerpt}
+        </p>
+      </div>
+
+      <!-- Featured Image Placeholder -->
+      <div class="aspect-video rounded-2xl bg-linear-to-br from-primary-900/20 to-neutral-900 mb-12 overflow-hidden border border-neutral-800">
+        <div class="w-full h-full flex items-center justify-center">
+          <span class="text-8xl">{post.emoji}</span>
+        </div>
+      </div>
+
+      <!-- Article Content -->
+      <div class="prose prose-invert prose-lg max-w-none">
+        <div class="space-y-6 text-neutral-300 leading-relaxed">
+          <p>
+            <strong>Note:</strong> This is a placeholder article. In your actual implementation, this content 
+            would come from MDX files or your content management system.
+          </p>
+
+          <h2 class="text-3xl font-bold text-neutral-100 mt-12 mb-6">Introduction</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+            mollit anim id est laborum.
+          </p>
+
+          <h2 class="text-3xl font-bold text-neutral-100 mt-12 mb-6">Understanding the Problem</h2>
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+            dicta sunt explicabo.
+          </p>
+
+          <blockquote class="border-l-4 border-primary-500 pl-6 py-2 my-8 italic text-neutral-400">
+            "This is a sample quote that would highlight an important point in your article. 
+            It helps break up the text and emphasize key insights."
+          </blockquote>
+
+          <h3 class="text-2xl font-bold text-neutral-100 mt-8 mb-4">Key Points to Remember</h3>
+          <ul class="space-y-2 list-disc list-inside text-neutral-300">
+            <li>First important point about the topic</li>
+            <li>Second crucial insight to consider</li>
+            <li>Third key takeaway for readers</li>
+            <li>Fourth essential element to understand</li>
+          </ul>
+
+          <h2 class="text-3xl font-bold text-neutral-100 mt-12 mb-6">Practical Solutions</h2>
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
+            deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non 
+            provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et 
+            dolorum fuga.
+          </p>
+
+          <ol class="space-y-3 list-decimal list-inside text-neutral-300 my-6">
+            <li class="pl-2">
+              <strong class="text-neutral-100">Step One:</strong> Start by identifying the issue clearly and honestly.
+            </li>
+            <li class="pl-2">
+              <strong class="text-neutral-100">Step Two:</strong> Develop a concrete action plan with realistic goals.
+            </li>
+            <li class="pl-2">
+              <strong class="text-neutral-100">Step Three:</strong> Implement changes gradually and track your progress.
+            </li>
+            <li class="pl-2">
+              <strong class="text-neutral-100">Step Four:</strong> Adjust your approach based on what works for you.
+            </li>
+          </ol>
+
+          <h2 class="text-3xl font-bold text-neutral-100 mt-12 mb-6">Conclusion</h2>
+          <p>
+            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod 
+            maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus 
+            autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
+            repudiandae sint et molestiae non recusandae.
+          </p>
+
+          <p>
+            Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias 
+            consequatur aut perferendis doloribus asperiores repellat.
+          </p>
+        </div>
+      </div>
+
+      <!-- Share Section -->
+      <div class="mt-16 pt-8 border-t border-neutral-800">
+        <h3 class="text-lg font-semibold text-neutral-100 mb-4">Share this article</h3>
+        <div class="flex gap-4">
+          <button class="px-4 py-2 bg-neutral-900 hover:bg-neutral-800 text-neutral-100 rounded-lg transition-colors border border-neutral-800">
+            Twitter
+          </button>
+          <button class="px-4 py-2 bg-neutral-900 hover:bg-neutral-800 text-neutral-100 rounded-lg transition-colors border border-neutral-800">
+            LinkedIn
+          </button>
+          <button class="px-4 py-2 bg-neutral-900 hover:bg-neutral-800 text-neutral-100 rounded-lg transition-colors border border-neutral-800">
+            Facebook
+          </button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-neutral-900/50 border-t border-neutral-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-neutral-100 mb-8">Related Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="group">
+          <a href="/blog" class="block">
+            <div class="aspect-video rounded-xl bg-linear-to-br from-primary-900/20 to-neutral-900 mb-4 overflow-hidden border border-neutral-800">
+              <div class="w-full h-full flex items-center justify-center text-4xl">
+                🧠
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold text-neutral-100 group-hover:text-primary-500 transition-colors">
+              Related Article Title
+            </h3>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>

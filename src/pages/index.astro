@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden dark:bg-linear-to-br dark:from-primary-950/20 dark:via-neutral-950 dark:to-neutral-950 light:bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+      <div class="text-center">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight dark:text-neutral-100 light:text-neutral-900 mb-6">
+          When productivity becomes
+          <span class="text-transparent bg-clip-text bg-linear-to-br from-primary-400 to-primary-600">
+            overload
+          </span>
+        </h1>
+        <p class="mx-auto max-w-5xl text-lg sm:text-xl dark:text-neutral-400 light:text-neutral-600 mb-8">
+          Sometimes the answer isn't more information-it's permission to stop searching. This is a space where questions 
+          matter more than answers, and where being confused is just part of figuring things out.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/blog" 
+            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-primary-500 hover:bg-primary-600 transition-colors"
+          >
+            Read the Blog
+          </a>
+          <a 
+            href="/about" 
+            class="inline-flex items-center justify-center px-8 py-3 border dark:border-neutral-700 light:border-neutral-300 text-base font-medium rounded-full dark:text-neutral-100 light:text-neutral-900 dark:hover:border-neutral-600 light:hover:border-neutral-400 dark:hover:bg-neutral-900 light:hover:bg-neutral-50 transition-colors"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Topics -->
+  <section class="py-16 sm:py-24 dark:bg-neutral-900/50 light:bg-neutral-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-12 text-center">
+        What We Talk About
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <!-- Burnout -->
+        <div class="group text-center">
+          <div class="aspect-4/3 overflow-hidden rounded-sm dark:bg-neutral-800 light:bg-neutral-200 mb-4">
+            <img 
+              src="/example1.jpg" 
+              alt="Burnout" 
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-lg font-bold dark:text-neutral-100 light:text-neutral-900">Burnout</h3>
+        </div>
+
+        <!-- Mental Health -->
+        <div class="group text-center">
+          <div class="aspect-4/3 overflow-hidden rounded-sm dark:bg-neutral-800 light:bg-neutral-200 mb-4">
+            <img 
+              src="/example2.jpg" 
+              alt="Mental Health" 
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-lg font-bold dark:text-neutral-100 light:text-neutral-900">Mental Health</h3>
+        </div>
+
+        <!-- Work-Life Balance -->
+        <div class="group text-center">
+          <div class="aspect-4/3 overflow-hidden rounded-sm dark:bg-neutral-800 light:bg-neutral-200 mb-4">
+            <img 
+              src="/example3.jpg" 
+              alt="Work-Life Balance" 
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <h3 class="text-lg font-bold dark:text-neutral-100 light:text-neutral-900">Work-Life Balance</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Posts Preview -->
+  <section class="py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold dark:text-neutral-100 light:text-neutral-900">
+          Latest Articles
+        </h2>
+        <a href="/blog" class="text-primary-500 hover:text-primary-400 font-medium flex items-center gap-2">
+          View all
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Sample post card -->
+        <article class="group">
+          <a href="/blog" class="block">
+            <div class="aspect-video rounded-2xl bg-linear-to-br dark:from-primary-900/20 dark:to-neutral-900 light:from-primary-50 light:to-neutral-100 mb-4 overflow-hidden border dark:border-neutral-800 light:border-neutral-200 shadow-sm">
+              <div class="w-full h-full flex items-center justify-center text-4xl">
+                📝
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-sm dark:text-neutral-500 light:text-neutral-600">
+                <time>Nov 2, 2025</time>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="text-xl font-semibold dark:text-neutral-100 light:text-neutral-900 group-hover:text-primary-500 transition-colors">
+                Understanding Burnout in 2025
+              </h3>
+              <p class="dark:text-neutral-400 light:text-neutral-600 line-clamp-2">
+                An exploration of how modern work culture contributes to burnout and what we can do about it.
+              </p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-24 dark:bg-linear-to-br dark:from-primary-950/20 dark:to-neutral-900/50 light:bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-6">
+        Join the Conversation
+      </h2>
+      <p class="text-lg dark:text-neutral-400 light:text-neutral-600 mb-8 max-w-2xl mx-auto">
+        Subscribe to our newsletter and never miss an article about mental health, burnout prevention, and work-life balance.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-1 px-4 py-3 rounded-full dark:bg-neutral-900 light:bg-white border dark:border-neutral-800 light:border-neutral-300 dark:text-neutral-100 light:text-neutral-900 dark:placeholder-neutral-500 light:placeholder-neutral-500 focus:outline-none focus:border-primary-500 transition-colors shadow-sm"
+        />
+        <button
+          type="submit"
+          class="px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-full transition-colors shadow-sm"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>
