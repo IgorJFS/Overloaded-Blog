@@ -9,11 +9,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
-import vercel from '@astrojs/vercel';
+import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://localhost:4321',
+  site: 'https://overloaded-blog.vercel.app',
   output: 'static',
   adapter: vercel({
     webAnalytics: {
