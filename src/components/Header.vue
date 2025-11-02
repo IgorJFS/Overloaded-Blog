@@ -22,7 +22,7 @@ const toggleMenu = () => {
         <!-- Logo -->
         <div class="flex items-center">
           <a href="/" class="flex items-center gap-3">
-            <img src="/logo.png" alt="Overloaded" class="h-8 w-auto" />
+            <img src="/logoSemBg.png" alt="Overloaded" class="h-8 w-auto" />
             <span class="text-xl font-bold dark:text-neutral-100 light:text-neutral-900">Overloaded</span>
           </a>
         </div>
