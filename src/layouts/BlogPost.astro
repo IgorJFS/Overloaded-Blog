@@ -1,6 +1,7 @@
 ---
 import Layout from './Layout.astro';
 import { posts } from '../data/posts';
+import { siteConfig } from '../config/site';
 
 // Get slug from frontmatter or URL
 const frontmatter = Astro.props.frontmatter || Astro.props;
@@ -24,13 +25,56 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
   day: 'numeric'
 });
 
+// ISO date for structured data
+const isoDate = new Date(date).toISOString();
+
 // Filter out current post and get 3 related posts
 const relatedPosts = posts
   .filter(post => post.slug !== slug)
   .slice(0, 3);
+
+// Structured data (JSON-LD) for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "image": new URL(image, Astro.site).toString(),
+  "datePublished": isoDate,
+  "dateModified": isoDate,
+  "author": {
+    "@type": "Organization",
+    "name": siteConfig.name,
+    "url": siteConfig.url
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteConfig.name,
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL("/logo.png", Astro.site).toString()
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, Astro.site).toString()
+  },
+  "articleSection": category,
+  "keywords": [category, "mental health", "burnout", "wellness"]
+};
 ---
 
-<Layout title={title} description={description}>
+<Layout 
+  title={title} 
+  description={description}
+  image={image}
+  article={true}
+  publishedTime={isoDate}
+  modifiedTime={isoDate}
+>
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
   <article class="py-12 sm:py-16 lg:py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->

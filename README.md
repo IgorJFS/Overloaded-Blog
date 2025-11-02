@@ -109,18 +109,47 @@ The color scheme is defined in `src/styles/global.css` using CSS custom properti
 
 ## 🚀 Deployment
 
+### Deploy to Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+1. Push your code to GitHub
+2. Import your repository on Vercel
+3. Vercel auto-detects Astro and configures everything
+4. Deploy! 🎉
+
+**See [VERCEL-DEPLOY.md](./VERCEL-DEPLOY.md) for detailed deployment instructions.**
+
+### Other Hosting Options
+
 Build the project for production:
 
 ```bash
 pnpm build
 ```
 
-The built site will be in the `./dist/` directory, ready to be deployed to any static hosting service:
-- Vercel
+The built site will be in the `./dist/` directory, ready to be deployed to:
+- ✅ **Vercel** (Recommended - Zero config)
 - Netlify
 - Cloudflare Pages
 - GitHub Pages
-- etc.
+- AWS S3 + CloudFront
+- Any static hosting service
+
+## 🔍 SEO Features
+
+This project includes comprehensive SEO optimization:
+
+- ✅ Automatic sitemap generation (`/sitemap-index.xml`)
+- ✅ Robots.txt configured
+- ✅ Open Graph meta tags for social sharing
+- ✅ Twitter Card support
+- ✅ Structured data (JSON-LD) for rich snippets
+- ✅ Canonical URLs
+- ✅ Custom 404 page with suggested content
+- ✅ Optimized meta descriptions and titles
+
+**See [SEO-IMPROVEMENTS.md](./SEO-IMPROVEMENTS.md) for complete SEO documentation.**
 
 ## 📄 License
 

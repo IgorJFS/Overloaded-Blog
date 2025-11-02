@@ -1,0 +1,10 @@
+# Robots.txt for Overloaded Blog
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: http://localhost:4321/sitemap-index.xml
+
+# Block access to sensitive areas (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
