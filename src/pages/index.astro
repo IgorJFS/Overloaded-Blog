@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { posts } from '../data/posts';
+
+// Get the 3 most recent posts
+const latestPosts = posts
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 3);
 ---
 
 <Layout title="Home">
@@ -96,29 +102,41 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Sample post card -->
-        <article class="group">
-          <a href="/blog" class="block">
-            <div class="aspect-video rounded-2xl bg-linear-to-br dark:from-primary-900/20 dark:to-neutral-900 light:from-primary-50 light:to-neutral-100 mb-4 overflow-hidden border dark:border-neutral-800 light:border-neutral-200 shadow-sm">
-              <div class="w-full h-full flex items-center justify-center text-4xl">
-                📝
+        {latestPosts.map((post) => (
+          <article class="group">
+            <a href={`/blog/${post.slug}`} class="block">
+              <div class="aspect-video rounded-2xl overflow-hidden border dark:border-neutral-800 light:border-neutral-200 shadow-sm mb-4">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
-            </div>
-            <div class="space-y-2">
-              <div class="flex items-center gap-2 text-sm dark:text-neutral-500 light:text-neutral-600">
-                <time>Nov 2, 2025</time>
-                <span>•</span>
-                <span>5 min read</span>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-sm dark:text-neutral-500 light:text-neutral-600">
+                  <span class="px-2 py-1 rounded-full text-xs dark:bg-neutral-800 light:bg-neutral-200 dark:text-neutral-400 light:text-neutral-600">
+                    {post.category}
+                  </span>
+                  <time datetime={post.date}>
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </time>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 class="text-xl font-semibold dark:text-neutral-100 light:text-neutral-900 group-hover:text-primary-500 transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+                <p class="dark:text-neutral-400 light:text-neutral-600 line-clamp-2">
+                  {post.excerpt}
+                </p>
               </div>
-              <h3 class="text-xl font-semibold dark:text-neutral-100 light:text-neutral-900 group-hover:text-primary-500 transition-colors">
-                Understanding Burnout in 2025
-              </h3>
-              <p class="dark:text-neutral-400 light:text-neutral-600 line-clamp-2">
-                An exploration of how modern work culture contributes to burnout and what we can do about it.
-              </p>
-            </div>
-          </a>
-        </article>
+            </a>
+          </article>
+        ))}
       </div>
     </div>
   </section>

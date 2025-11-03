@@ -34,4 +34,15 @@ export const posts: BlogPost[] = [
     slug: "mental-health-digital-age",
     featured: false
   },
+  {
+    id: 3,
+    title: "Hustle Culture is Quietly Destroying a Generation",
+    excerpt: "You wear your exhaustion like a medal. Here's what you're actually doing.",
+    date: "2025-11-02",
+    readTime: "12 min read",
+    category: "Society",
+    image: "/post3.jpg",
+    slug: "hustle-culture-destroying-generation",
+    featured: true
+  },
 ];

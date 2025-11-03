@@ -36,3 +36,6 @@ Thumbs.db
 # Testing
 coverage/
 .nyc_output/
+
+# Internal Documentation (not for public)
+BLOG-WRITING-GUIDE.md
