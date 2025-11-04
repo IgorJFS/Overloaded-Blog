@@ -15,12 +15,12 @@ export const posts: BlogPost[] = [
   {
     id: 1,
     title: "Is Reading Books Still Worth It in 2025?",
-    excerpt: "Spoiler: Yes. But not the way you think.",
+    excerpt: "In an age of AI summaries, 2.5x speed audiobooks, and non-stop content, are books obsolete? We explore the real value of reading (and not reading) in 2025.",
     date: "2025-11-02",
     readTime: "7 min read",
     category: "Society",
     image: "/post1.png",
-    slug: "understanding-burnout-2025",
+    slug: "reading-books-2025",
     featured: true
   },
   {
