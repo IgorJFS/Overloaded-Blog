@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Flame, Brain, Scale, Globe } from 'lucide-vue-next';
 ---
 
 <Layout title="About" description="Learn more about Overloaded and our mission to discuss burnout, mental health, and work-life balance.">
@@ -36,28 +37,36 @@ import Layout from '../layouts/Layout.astro';
             <h2 class="text-2xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-4">What We Cover</h2>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
-                <span class="text-primary-500 text-xl mt-1">🔥</span>
+                <div class="shrink-0 mt-1">
+                  <Flame size={24} strokeWidth={2} class="text-red-500" client:load />
+                </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Burnout Recognition & Recovery</h3>
                   <p class="dark:text-neutral-400 light:text-neutral-600">Understanding the signs, causes, and paths to recovery from burnout in all its forms.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-primary-500 text-xl mt-1">🧠</span>
+                <div class="shrink-0 mt-1">
+                  <Brain size={24} strokeWidth={2} class="text-purple-500" client:load />
+                </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Mental Health Awareness</h3>
                   <p class="dark:text-neutral-400 light:text-neutral-600">Breaking down stigma and exploring practical ways to maintain psychological well-being.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-primary-500 text-xl mt-1">⚖️</span>
+                <div class="shrink-0 mt-1">
+                  <Scale size={24} strokeWidth={2} class="text-blue-500" client:load />
+                </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Work-Life Integration</h3>
                   <p class="dark:text-neutral-400 light:text-neutral-600">Finding sustainable ways to navigate modern work culture and personal life.</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
-                <span class="text-primary-500 text-xl mt-1">🌍</span>
+                <div class="shrink-0 mt-1">
+                  <Globe size={24} strokeWidth={2} class="text-green-500" client:load />
+                </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Societal Challenges</h3>
                   <p class="dark:text-neutral-400 light:text-neutral-600">Examining broader issues that impact our collective mental health and well-being.</p>

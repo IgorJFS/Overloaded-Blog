@@ -40,7 +40,7 @@ export const posts: BlogPost[] = [
     excerpt: "You wear your exhaustion like a medal. Here's what you're actually doing.",
     date: "2025-11-02",
     readTime: "12 min read",
-    category: "Society",
+    category: "Work Culture",
     image: "/post3.jpg",
     slug: "hustle-culture-destroying-generation",
     featured: true

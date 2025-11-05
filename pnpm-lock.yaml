@@ -29,6 +29,9 @@ importers:
       astro:
         specifier: ^5.15.3
         version: 5.15.3(@types/node@24.9.2)(@vercel/functions@2.2.13)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)
+      lucide-vue-next:
+        specifier: ^0.552.0
+        version: 0.552.0(vue@3.5.22(typescript@5.9.3))
       tailwindcss:
         specifier: ^4.1.16
         version: 4.1.16
@@ -1629,6 +1632,11 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lucide-vue-next@0.552.0:
+    resolution: {integrity: sha512-xbP3UBwNkGoCl1ezW/zsGHtyJ1rOowPmSpUG1f7V38YvZBlGiV3BxL+4mu9C9i0EjfJ6ca066FpnB3VK+HN92g==}
+    peerDependencies:
+      vue: '>=3.0.1'
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -4320,6 +4328,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide-vue-next@0.552.0(vue@3.5.22(typescript@5.9.3)):
+    dependencies:
+      vue: 3.5.22(typescript@5.9.3)
 
   magic-string@0.30.21:
     dependencies:

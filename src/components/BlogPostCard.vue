@@ -15,13 +15,26 @@ const formatDate = (dateString: string) => {
     year: 'numeric'
   });
 };
+
+const getCategoryClasses = (category: string) => {
+  const categoryMap: Record<string, string> = {
+    'Burnout': 'bg-red-100 dark:bg-red-500/10 text-red-600 dark:text-red-400',
+    'Mental Health': 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+    'Work-Life Balance': 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400',
+    'Work Culture': 'bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400',
+    'Society': 'bg-violet-100 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400',
+    'Recovery': 'bg-teal-100 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400',
+  };
+  
+  return categoryMap[category] || 'bg-primary-100 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400';
+};
 </script>
 
 <template>
   <article class="group">
     <a :href="`/blog/${post.slug}`" class="block">
       <!-- Post Image Placeholder -->
-      <div class="aspect-video rounded-2xl dark:bg-linear-to-br dark:from-primary-900/20 dark:to-neutral-900 light:bg-neutral-100 mb-4 overflow-hidden border dark:border-neutral-800 light:border-neutral-200 group-hover:border-primary-500/50 transition-colors">
+      <div class="aspect-video rounded-2xl bg-neutral-100 dark:bg-linear-to-br dark:from-primary-900/20 dark:to-neutral-900 mb-4 overflow-hidden border border-neutral-200 dark:border-neutral-800 group-hover:border-primary-500/50 transition-colors">
         <div class="w-full h-full flex items-center justify-center">
           <span class="text-5xl">{{ post.emoji }}</span>
         </div>
@@ -31,10 +44,10 @@ const formatDate = (dateString: string) => {
       <div class="space-y-3">
         <!-- Meta -->
         <div class="flex items-center gap-3 text-sm">
-          <span class="px-3 py-1 rounded-full dark:bg-primary-500/10 light:bg-primary-100 dark:text-primary-400 light:text-primary-600 font-medium">
+          <span :class="['px-3 py-1 rounded-full font-medium', getCategoryClasses(post.category)]">
             {{ post.category }}
           </span>
-          <div class="flex items-center gap-2 dark:text-neutral-500 light:text-neutral-600">
+          <div class="flex items-center gap-2 text-neutral-600 dark:text-neutral-500">
             <time :datetime="post.date">
               {{ formatDate(post.date) }}
             </time>
@@ -44,12 +57,12 @@ const formatDate = (dateString: string) => {
         </div>
 
         <!-- Title -->
-        <h2 class="text-xl font-semibold dark:text-neutral-100 light:text-neutral-900 group-hover:text-primary-500 transition-colors line-clamp-2">
+        <h2 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-primary-500 transition-colors line-clamp-2">
           {{ post.title }}
         </h2>
 
         <!-- Excerpt -->
-        <p class="dark:text-neutral-400 light:text-neutral-600 line-clamp-3 leading-relaxed">
+        <p class="text-neutral-600 dark:text-neutral-400 line-clamp-3 leading-relaxed">
           {{ post.excerpt }}
         </p>
 

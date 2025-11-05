@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import LoadingSpinner from './LoadingSpinner.vue';
 
 interface BlogPost {
   id: number;
@@ -20,6 +21,14 @@ interface Props {
 const props = defineProps<Props>();
 
 const selectedCategory = ref('All');
+const isLoading = ref(true);
+
+onMounted(() => {
+  // Simula carregamento inicial
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 300);
+});
 
 const filteredPosts = computed(() => {
   if (selectedCategory.value === 'All') {
@@ -36,34 +45,94 @@ const formatDate = (dateString: string) => {
     year: 'numeric'
   });
 };
+
+const getCategoryClasses = (category: string) => {
+  const categoryMap: Record<string, string> = {
+    'Burnout': 'bg-red-100 dark:bg-red-500/10 text-red-600 dark:text-red-400',
+    'Mental Health': 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+    'Work-Life Balance': 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400',
+    'Work Culture': 'bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400',
+    'Society': 'bg-violet-100 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400',
+    'Recovery': 'bg-teal-100 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400',
+  };
+  
+  return categoryMap[category] || 'bg-primary-100 dark:bg-primary-500/10 text-primary-600 dark:text-primary-400';
+};
+
+const getFilterCategoryClasses = (category: string, isSelected: boolean) => {
+  if (category === 'All') {
+    return isSelected
+      ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
+      : 'bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100';
+  }
+  
+  const categoryMap: Record<string, { selected: string; default: string }> = {
+    'Burnout': {
+      selected: 'bg-red-500 text-white shadow-lg shadow-red-500/30',
+      default: 'bg-red-100 dark:bg-red-500/10 text-red-600 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-500/20'
+    },
+    'Mental Health': {
+      selected: 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/30',
+      default: 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-200 dark:hover:bg-emerald-500/20'
+    },
+    'Work-Life Balance': {
+      selected: 'bg-blue-500 text-white shadow-lg shadow-blue-500/30',
+      default: 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-500/20'
+    },
+    'Work Culture': {
+      selected: 'bg-orange-500 text-white shadow-lg shadow-orange-500/30',
+      default: 'bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-500/20'
+    },
+    'Society': {
+      selected: 'bg-violet-500 text-white shadow-lg shadow-violet-500/30',
+      default: 'bg-violet-100 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 hover:bg-violet-200 dark:hover:bg-violet-500/20'
+    },
+    'Recovery': {
+      selected: 'bg-teal-500 text-white shadow-lg shadow-teal-500/30',
+      default: 'bg-teal-100 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 hover:bg-teal-200 dark:hover:bg-teal-500/20'
+    },
+  };
+  
+  const colors = categoryMap[category];
+  if (!colors) {
+    return isSelected
+      ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
+      : 'bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800';
+  }
+  
+  return isSelected ? colors.selected : colors.default;
+};
 </script>
 
 <template>
   <div>
     <!-- Filters -->
     <div class="flex flex-wrap items-center gap-3 mb-12">
-      <span class="text-sm font-medium dark:text-neutral-400 light:text-neutral-600 mr-2">Filter by:</span>
+      <span class="text-sm font-medium text-neutral-600 dark:text-neutral-400 mr-2">Filter by:</span>
       <button
         v-for="category in categories"
         :key="category"
         @click="selectedCategory = category"
         :class="[
           'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
-          selectedCategory === category
-            ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
-            : 'dark:bg-neutral-900 light:bg-neutral-100 dark:text-neutral-400 light:text-neutral-600 dark:hover:bg-neutral-800 light:hover:bg-neutral-200 dark:hover:text-neutral-100 light:hover:text-neutral-900'
+          getFilterCategoryClasses(category, selectedCategory === category)
         ]"
       >
         {{ category }}
       </button>
     </div>
 
+    <!-- Loading State -->
+    <div v-if="isLoading" class="flex items-center justify-center py-20">
+      <LoadingSpinner />
+    </div>
+
     <!-- Posts Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <article v-for="post in filteredPosts" :key="post.id" class="group">
         <a :href="`/blog/${post.slug}`" class="block">
           <!-- Post Image Placeholder -->
-          <div class="aspect-video rounded-2xl dark:bg-linear-to-br dark:from-primary-900/20 dark:to-neutral-900 light:bg-neutral-100 mb-4 overflow-hidden border dark:border-neutral-800 light:border-neutral-200 group-hover:border-primary-500/50 transition-colors shadow-sm">
+          <div class="aspect-video rounded-2xl bg-neutral-100 dark:bg-linear-to-br dark:from-primary-900/20 dark:to-neutral-900 mb-4 overflow-hidden border border-neutral-200 dark:border-neutral-800 group-hover:border-primary-500/50 transition-colors shadow-sm">
             <img 
               :src="post.image" 
               :alt="post.title" 
@@ -75,10 +144,10 @@ const formatDate = (dateString: string) => {
           <div class="space-y-3">
             <!-- Meta -->
             <div class="flex items-center gap-3 text-sm">
-              <span class="px-3 py-1 rounded-full dark:bg-primary-500/10 light:bg-primary-100 dark:text-primary-400 light:text-primary-600 font-medium">
+              <span :class="['px-3 py-1 rounded-full font-medium', getCategoryClasses(post.category)]">
                 {{ post.category }}
               </span>
-              <div class="flex items-center gap-2 dark:text-neutral-500 light:text-neutral-600">
+              <div class="flex items-center gap-2 text-neutral-600 dark:text-neutral-500">
                 <time :datetime="post.date">
                   {{ formatDate(post.date) }}
                 </time>
@@ -88,12 +157,12 @@ const formatDate = (dateString: string) => {
             </div>
 
             <!-- Title -->
-            <h2 class="text-xl font-semibold dark:text-neutral-100 light:text-neutral-900 group-hover:text-primary-500 transition-colors line-clamp-2">
+            <h2 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-primary-500 transition-colors line-clamp-2">
               {{ post.title }}
             </h2>
 
             <!-- Excerpt -->
-            <p class="dark:text-neutral-400 light:text-neutral-600 line-clamp-3 leading-relaxed">
+            <p class="text-neutral-600 dark:text-neutral-400 line-clamp-3 leading-relaxed">
               {{ post.excerpt }}
             </p>
 
