@@ -82,6 +82,18 @@ const footerLinks = {
       <!-- Bottom bar -->
       <div class="pt-8 border-t dark:border-neutral-800 light:border-neutral-200">
         <div class="flex flex-col justify-center items-center gap-4">
+          <!-- Ko-Fi Button -->
+          <div class="mb-2">
+            <a href='https://ko-fi.com/M4M71JMEK9' target='_blank' rel="noopener noreferrer">
+              <img 
+                height='36' 
+                style='border:0px;height:36px;' 
+                src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' 
+                alt='Buy Me a Coffee at ko-fi.com' 
+              />
+            </a>
+          </div>
+          
           <p class="dark:text-neutral-500 light:text-neutral-600 text-sm">
             &copy; {{ currentYear }} Overloaded. All rights reserved.
           </p>

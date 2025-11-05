@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AdBanner from '../components/AdBanner.vue';
 import { posts } from '../data/posts';
 
 // Get the 3 most recent posts
@@ -141,28 +142,60 @@ const latestPosts = posts
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Ad Before CTA -->
+  <section class="py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <AdBanner format="horizontal" client:load />
+    </div>
+  </section>
+
+  <!-- CTA Section - Newsletter + Support -->
   <section class="py-16 sm:py-24 dark:bg-linear-to-br dark:from-primary-950/20 dark:to-neutral-900/50 light:bg-white">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-6">
-        Join the Conversation
-      </h2>
-      <p class="text-lg dark:text-neutral-400 light:text-neutral-600 mb-8 max-w-2xl mx-auto">
-        Subscribe to our newsletter and never miss an article about mental health, burnout prevention, and work-life balance.
-      </p>
-      <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-        <input
-          type="email"
-          placeholder="Enter your email"
-          class="flex-1 px-4 py-3 rounded-full dark:bg-neutral-900 light:bg-white border dark:border-neutral-800 light:border-neutral-300 dark:text-neutral-100 light:text-neutral-900 dark:placeholder-neutral-500 light:placeholder-neutral-500 focus:outline-none focus:border-primary-500 transition-colors shadow-sm"
-        />
-        <button
-          type="submit"
-          class="px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-full transition-colors shadow-sm"
-        >
-          Subscribe
-        </button>
-      </form>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Join the Conversation -->
+        <div class="text-center lg:text-left">
+          <h2 class="text-3xl sm:text-4xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-6">
+            Join the Conversation
+          </h2>
+          <p class="text-lg dark:text-neutral-400 light:text-neutral-600 mb-8">
+            Subscribe to our newsletter and never miss an article about mental health, burnout prevention, and work-life balance.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 px-4 py-3 rounded-full dark:bg-neutral-900 light:bg-white border dark:border-neutral-800 light:border-neutral-300 dark:text-neutral-100 light:text-neutral-900 dark:placeholder-neutral-500 light:placeholder-neutral-500 focus:outline-none focus:border-primary-500 transition-colors shadow-sm"
+            />
+            <button
+              type="submit"
+              class="px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-full transition-colors shadow-sm whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <!-- Support This Work -->
+        <div class="text-center lg:text-left">
+          <h2 class="text-3xl sm:text-4xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-6">
+            Support This Work
+          </h2>
+          <p class="text-lg dark:text-neutral-400 light:text-neutral-600 mb-8">
+            If this content resonates with you, consider buying me a coffee. Every contribution helps keep this space free and accessible.
+          </p>
+          <div class="flex justify-center lg:justify-start">
+            <a href='https://ko-fi.com/M4M71JMEK9' target='_blank' rel="noopener noreferrer">
+              <img 
+                height='36' 
+                style='border:0px;height:36px;' 
+                src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' 
+                alt='Buy Me a Coffee at ko-fi.com' 
+              />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>

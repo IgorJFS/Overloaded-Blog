@@ -21,14 +21,6 @@ interface Props {
 const props = defineProps<Props>();
 
 const selectedCategory = ref('All');
-const isLoading = ref(true);
-
-onMounted(() => {
-  // Simula carregamento inicial
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 300);
-});
 
 const filteredPosts = computed(() => {
   if (selectedCategory.value === 'All') {
@@ -122,13 +114,8 @@ const getFilterCategoryClasses = (category: string, isSelected: boolean) => {
       </button>
     </div>
 
-    <!-- Loading State -->
-    <div v-if="isLoading" class="flex items-center justify-center py-20">
-      <LoadingSpinner />
-    </div>
-
     <!-- Posts Grid -->
-    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <article v-for="post in filteredPosts" :key="post.id" class="group">
         <a :href="`/blog/${post.slug}`" class="block">
           <!-- Post Image Placeholder -->

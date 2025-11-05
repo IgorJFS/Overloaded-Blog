@@ -2,6 +2,8 @@
 import Layout from './Layout.astro';
 import { posts } from '../data/posts';
 import { siteConfig } from '../config/site';
+import AdBanner from '../components/AdBanner.vue';
+import AdInFeed from '../components/AdInFeed.vue';
 
 // Get slug from frontmatter or URL
 const frontmatter = Astro.props.frontmatter || Astro.props;
@@ -122,10 +124,16 @@ const getCategoryClasses = (cat: string) => {
         </div>
       )}
 
+      <!-- Ad Banner - Após a imagem, antes do conteúdo -->
+      <AdBanner format="horizontal" client:load />
+
       <!-- Content -->
       <div class="blog-content">
         <slot />
       </div>
+
+      <!-- Ad In-Feed - Após o conteúdo, antes de posts relacionados -->
+      <AdInFeed client:load />
 
       <!-- Related Posts -->
       <div class="mt-16 pt-16 border-t light:border-gray-200 dark:border-white/10">

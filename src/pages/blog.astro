@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BlogGrid from '../components/BlogGrid.vue';
+import AdSidebar from '../components/AdSidebar.vue';
+import AdBanner from '../components/AdBanner.vue';
+import AdInFeed from '../components/AdInFeed.vue';
 import { posts } from '../data/posts';
 
 const categories = ["All", "Burnout", "Mental Health", "Work-Life Balance", "Work Culture", "Society", "Recovery"];
@@ -22,10 +25,60 @@ const categories = ["All", "Burnout", "Mental Health", "Work-Life Balance", "Wor
     </div>
   </section>
 
-  <!-- Blog Posts Grid with Filters -->
+  <!-- Blog Posts Grid with Filters + Sidebar -->
   <section class="py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <BlogGrid posts={posts} categories={categories} client:load />
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr,300px] gap-12">
+        <!-- Main Content -->
+        <div>
+          <BlogGrid posts={posts} categories={categories} client:load />
+        </div>
+
+        <!-- Sidebar com Ads -->
+        <div class="hidden lg:block">
+          <AdSidebar :sticky="true" client:load />
+        </div>
+      </div>
+
+      <!-- Ad Mobile - Aparece só no mobile, entre os posts -->
+      <div class="block lg:hidden mt-12">
+        <AdBanner format="horizontal" client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Mobile Extra - Depois dos posts, antes da newsletter -->
+  <section class="block lg:hidden py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <AdInFeed client:load />
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-16 sm:py-24 dark:bg-linear-to-br dark:from-primary-950/20 dark:to-neutral-900/50 light:bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-6">
+        Never Miss an Article
+      </h2>
+      <p class="text-lg dark:text-neutral-400 light:text-neutral-600 mb-8 max-w-2xl mx-auto">
+        Get notified when we publish new content about burnout, mental health, and work-life balance.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="flex-1 px-4 py-3 rounded-full dark:bg-neutral-900 light:bg-white border dark:border-neutral-800 light:border-neutral-300 dark:text-neutral-100 light:text-neutral-900 dark:placeholder-neutral-500 light:placeholder-neutral-500 focus:outline-none focus:border-primary-500 transition-colors shadow-sm"
+        />
+        <button
+          type="submit"
+          class="px-8 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-full transition-colors shadow-sm"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>
     </div>
   </section>
 
