@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BlogGrid from '../components/BlogGrid.vue';
-import AdSidebar from '../components/AdSidebar.vue';
-import AdBanner from '../components/AdBanner.vue';
-import AdInFeed from '../components/AdInFeed.vue';
+// import AdSidebar from '../components/AdSidebar.vue';
+// import AdBanner from '../components/AdBanner.vue';
+// import AdInFeed from '../components/AdInFeed.vue';
 import { posts } from '../data/posts';
 
 const categories = ["All", "Burnout", "Mental Health", "Work-Life Balance", "Work Culture", "Society", "Recovery"];
@@ -35,24 +35,24 @@ const categories = ["All", "Burnout", "Mental Health", "Work-Life Balance", "Wor
         </div>
 
         <!-- Sidebar com Ads -->
-        <div class="hidden lg:block">
+        <!-- <div class="hidden lg:block">
           <AdSidebar :sticky="true" client:load />
-        </div>
+        </div> -->
       </div>
 
       <!-- Ad Mobile - Aparece só no mobile, entre os posts -->
-      <div class="block lg:hidden mt-12">
+      <!-- <div class="block lg:hidden mt-12">
         <AdBanner format="horizontal" client:load />
-      </div>
+      </div> -->
     </div>
   </section>
 
   <!-- Ad Mobile Extra - Depois dos posts, antes da newsletter -->
-  <section class="block lg:hidden py-8">
+  <!-- <section class="block lg:hidden py-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <AdInFeed client:load />
     </div>
-  </section>
+  </section> -->
 
   <!-- Newsletter CTA -->
   <section class="py-16 sm:py-24 dark:bg-linear-to-br dark:from-primary-950/20 dark:to-neutral-900/50 light:bg-white">
