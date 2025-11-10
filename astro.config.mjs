@@ -13,7 +13,7 @@ import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://overloaded-blog.vercel.app',
+  site: 'https://www.overloaded.live/',
   output: 'static',
   adapter: vercel({
     webAnalytics: {
