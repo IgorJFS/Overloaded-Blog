@@ -1,5 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const currentYear = new Date().getFullYear();
+const lastUpdated = new Date().toLocaleDateString('en-US', { 
+  month: 'long', 
+  day: 'numeric', 
+  year: 'numeric' 
+});
 ---
 
 <Layout 
@@ -14,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
           Privacy Policy
         </h1>
         <p class="dark:text-neutral-400 text-neutral-600">
-          Last updated: November 5, 2025
+          Last updated: {lastUpdated}
         </p>
       </div>
 

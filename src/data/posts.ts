@@ -1,5 +1,7 @@
 import { readTime } from "@/utils/readTime";
 
+const currentYear = new Date().getFullYear();
+
 export interface BlogPost {
   id: number;
   title: string;
@@ -16,8 +18,8 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
   {
     id: 1,
-    title: "Is Reading Books Still Worth It in 2025?",
-    excerpt: "In an age of AI summaries, 2.5x speed audiobooks, and non-stop content, are books obsolete? We explore the real value of reading (and not reading) in 2025.",
+    title: `Is Reading Books Still Worth It in ${currentYear}?`,
+    excerpt: `In an age of AI summaries, 2.5x speed audiobooks, and non-stop content, are books obsolete? We explore the real value of reading (and not reading) in ${currentYear}.`,
     date: "2025-11-02",
     readTime: readTime("reading-books-2025"),
     category: "Society",
