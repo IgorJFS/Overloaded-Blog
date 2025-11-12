@@ -195,10 +195,12 @@ const latestPosts = posts
           <p class="text-lg dark:text-neutral-400 light:text-neutral-600 mb-8">
             Subscribe to our newsletter and never miss an article about mental health, burnout prevention, and work-life balance.
           </p>
-          <form class="flex flex-col sm:flex-row gap-4">
+          <form action="https://formspree.io/f/mzzyzbgp" method="POST" class="flex flex-col sm:flex-row gap-4">
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
+              required
               class="flex-1 px-4 py-3 rounded-full dark:bg-neutral-900 light:bg-white border dark:border-neutral-800 light:border-neutral-300 dark:text-neutral-100 light:text-neutral-900 dark:placeholder-neutral-500 light:placeholder-neutral-500 focus:outline-none focus:border-primary-500 transition-colors shadow-sm"
             />
             <button
