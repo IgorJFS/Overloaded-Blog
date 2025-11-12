@@ -2,6 +2,7 @@
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import BackToTop from '../components/BackToTop.vue';
+import CookieConsent from '../components/CookieConsent.vue';
 import { siteConfig } from '../config/site';
 import  Analytics  from '@vercel/analytics/astro';
 import '../styles/global.css';
@@ -31,15 +32,21 @@ const socialImage = new URL(image, Astro.site);
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KNSVR3KWG"></script>
+    <!-- Google tag (gtag.js) with Consent Mode -->
     <script is:inline>
+      // Initialize consent mode before GA loads
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      
+      // Default consent to denied (will be updated by CookieConsent component)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+      
       gtag('js', new Date());
-
       gtag('config', 'G-3KNSVR3KWG');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KNSVR3KWG"></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -107,6 +114,7 @@ const socialImage = new URL(image, Astro.site);
     </main>
     <Footer client:load />
     <BackToTop client:load />
+    <CookieConsent client:load />
     <Analytics />
   </body>
 </html>
