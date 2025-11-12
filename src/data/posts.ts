@@ -2,14 +2,14 @@ import { readTime } from "@/utils/readTime";
 
 const currentYear = new Date().getFullYear();
 
-export interface BlogPost {
+interface BlogPost {
   id: number;
   title: string;
   excerpt: string;
   description?: string;
   date: string;
   readTime: string;
-  category: string;
+  category: "Burnout" | "Mental Health" | "Work Culture" | "Society" | "Work-Life Balance" | "Recovery";
   image: string;
   slug: string;
   featured?: boolean;
@@ -36,7 +36,7 @@ export const posts: BlogPost[] = [
     category: "Mental Health",
     image: "/socialMedia.jpg",
     slug: "mental-health-digital-age",
-    featured: false
+    featured: true
   },
   {
     id: 3,

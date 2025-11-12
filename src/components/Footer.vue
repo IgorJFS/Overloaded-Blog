@@ -1,27 +1,33 @@
 <script setup lang="ts">
-import { Instagram, Youtube, Twitter } from 'lucide-vue-next';
+// import { Instagram, Youtube, Twitter } from 'lucide-vue-next';
 
 const currentYear = new Date().getFullYear();
 
-const socialLinks = [
-  { 
-    name: 'Instagram', 
-    href: '#', 
-    icon: Instagram,
-    colorClass: 'bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white hover:brightness-110'
-  },
-  { 
-    name: 'YouTube', 
-    href: '#', 
-    icon: Youtube,
-    colorClass: 'bg-[#FF0000] text-white hover:brightness-110'
-  },
-  { 
-    name: 'X (Twitter)', 
-    href: '#', 
-    icon: Twitter,
-    colorClass: 'bg-blue-500 text-white dark:text-black hover:brightness-110'
-  },
+// const socialLinks = [
+//   { 
+//     name: 'Instagram', 
+//     href: '#', 
+//     icon: Instagram,
+//     colorClass: 'bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white hover:brightness-110'
+//   },
+//   { 
+//     name: 'YouTube', 
+//     href: '#', 
+//     icon: Youtube,
+//     colorClass: 'bg-[#FF0000] text-white hover:brightness-110'
+//   },
+//   { 
+//     name: 'X (Twitter)', 
+//     href: '#', 
+//     icon: Twitter,
+//     colorClass: 'bg-blue-500 text-white dark:text-black hover:brightness-110'
+//   },
+// ];
+
+const navigationLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'About', href: '/about' },
 ];
 
 const footerLinks = {
@@ -35,7 +41,7 @@ const footerLinks = {
 <template>
   <footer class="border-t dark:border-neutral-800 light:border-neutral-200 dark:bg-neutral-950 light:bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <!-- About -->
         <div>
           <div class="flex items-center gap-2 mb-4">
@@ -47,8 +53,23 @@ const footerLinks = {
           </p>
         </div>
 
-        <!-- Social Links -->
+        <!-- Navigation -->
         <div>
+          <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-4">Navigate</h3>
+          <ul class="space-y-2">
+            <li v-for="link in navigationLinks" :key="link.name">
+              <a
+                :href="link.href"
+                class="dark:text-neutral-400 light:text-neutral-600 hover:text-primary-500 transition-colors text-sm"
+              >
+                {{ link.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Links -->
+        <!-- <div>
           <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-4">Connect</h3>
           <div class="flex gap-4">
             <a
@@ -61,7 +82,7 @@ const footerLinks = {
               <component :is="social.icon" :size="20" :stroke-width="2" />
             </a>
           </div>
-        </div>
+        </div> -->
 
         <!-- Legal -->
         <div>
@@ -76,6 +97,20 @@ const footerLinks = {
               </a>
             </li>
           </ul>
+        </div>
+
+        <!-- Newsletter/Support -->
+        <div>
+          <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-4">Stay Updated</h3>
+          <p class="dark:text-neutral-400 light:text-neutral-600 text-sm leading-relaxed mb-3">
+            Get notified about new articles and updates.
+          </p>
+          <a
+            href="/#newsletter"
+            class="inline-block px-4 py-2 text-sm font-medium rounded-full border dark:border-neutral-700 light:border-neutral-300 dark:text-neutral-300 light:text-neutral-700 dark:hover:bg-neutral-800 light:hover:bg-neutral-50 transition-colors"
+          >
+            Subscribe
+          </a>
         </div>
       </div>
 

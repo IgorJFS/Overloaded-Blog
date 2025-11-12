@@ -35,9 +35,6 @@ const getCategoryClasses = (category: string) => {
     <a :href="`/blog/${post.slug}`" class="block">
       <!-- Post Image Placeholder -->
       <div class="aspect-video rounded-2xl bg-neutral-100 dark:bg-linear-to-br dark:from-primary-900/20 dark:to-neutral-900 mb-4 overflow-hidden border border-neutral-200 dark:border-neutral-800 group-hover:border-primary-500/50 transition-colors">
-        <div class="w-full h-full flex items-center justify-center">
-          <span class="text-5xl">{{ post.emoji }}</span>
-        </div>
       </div>
 
       <!-- Post Content -->
