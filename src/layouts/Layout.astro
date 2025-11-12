@@ -3,6 +3,7 @@ import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import BackToTop from '../components/BackToTop.vue';
 import { siteConfig } from '../config/site';
+import  Analytics  from '@vercel/analytics/astro';
 import '../styles/global.css';
 
 interface Props {
@@ -106,5 +107,6 @@ const socialImage = new URL(image, Astro.site);
     </main>
     <Footer client:load />
     <BackToTop client:load />
+    <Analytics />
   </body>
 </html>
