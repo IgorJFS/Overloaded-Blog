@@ -99,17 +99,19 @@ const footerLinks = {
           </ul>
         </div>
 
-        <!-- Newsletter/Support -->
+        <!-- Suggest Topics -->
         <div>
-          <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-4">Stay Updated</h3>
+          <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-4">Have an Idea?</h3>
           <p class="dark:text-neutral-400 light:text-neutral-600 text-sm leading-relaxed mb-3">
-            Get notified about new articles and updates.
+            Suggest topics you'd like me to write about.
           </p>
           <a
-            href="/#newsletter"
-            class="inline-block px-4 py-2 text-sm font-medium rounded-full border dark:border-neutral-700 light:border-neutral-300 dark:text-neutral-300 light:text-neutral-700 dark:hover:bg-neutral-800 light:hover:bg-neutral-50 transition-colors"
+            href="https://forms.gle/V811uCqJveahmLas9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-4 py-2 text-sm font-medium rounded-full bg-blue-400 hover:bg-blue-500 text-white transition-colors shadow-sm"
           >
-            Subscribe
+            Submit Idea
           </a>
         </div>
       </div>
