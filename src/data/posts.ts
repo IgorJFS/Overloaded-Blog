@@ -48,7 +48,7 @@ export const posts: BlogPost[] = [
     date: "2025-11-02",
     readTime: readTime("hustle-culture-destroying-generation"),
     category: "Work Culture",
-    image: "/post3.jpg",
+    image: "/post3.webp",
     slug: "hustle-culture-destroying-generation",
     featured: true
   },
