@@ -49,4 +49,15 @@ export const posts: BlogPost[] = [
     slug: "hustle-culture-destroying-generation",
     featured: true
   },
+  {
+    id: 4,
+    title: "How to Not Feel Overwhelmed by News All Around",
+    excerpt: "The world is loud. Your mornings and nights don't have to be.",
+    date: "2025-11-12",
+    readTime: readTime("not-overwhelmed-by-news"),
+    category: "Recovery",
+    image: "/post4.jpg",
+    slug: "not-overwhelmed-by-news",
+    featured: false
+  },
 ];
