@@ -36,7 +36,7 @@ export const posts: BlogPost[] = [
     date: "2025-10-28",
     readTime: readTime("mental-health-digital-age"),
     category: "Mental Health",
-    image: "/socialMedia.jpg",
+    image: "/socialMedia.webp",
     slug: "mental-health-digital-age",
     featured: true
   },
