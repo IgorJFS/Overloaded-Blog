@@ -10,7 +10,8 @@ interface BlogPost {
   date: string;
   readTime: string;
   category: "Burnout" | "Mental Health" | "Work Culture" | "Society" | "Work-Life Balance" | "Recovery";
-  image: string;
+  image: string; // Full-size image for post pages
+  thumbnailImage?: string; // Optional thumbnail for cards
   slug: string;
   featured?: boolean;
 }
@@ -24,7 +25,8 @@ export const posts: BlogPost[] = [
     date: "2025-11-02",
     readTime: readTime("reading-books-2025"),
     category: "Society",
-    image: "/post1.webp",
+    image: "posts/post1.webp",
+    thumbnailImage: "posts/post1-thumb.webp",
     slug: "reading-books-2025",
     featured: true
   },
@@ -36,7 +38,8 @@ export const posts: BlogPost[] = [
     date: "2025-10-28",
     readTime: readTime("mental-health-digital-age"),
     category: "Mental Health",
-    image: "/socialMedia.webp",
+    image: "posts/post2.webp",
+    thumbnailImage: "posts/post2-thumb.webp",
     slug: "mental-health-digital-age",
     featured: true
   },
@@ -48,7 +51,8 @@ export const posts: BlogPost[] = [
     date: "2025-11-02",
     readTime: readTime("hustle-culture-destroying-generation"),
     category: "Work Culture",
-    image: "/post3.webp",
+    image: "posts/post3.webp",
+    thumbnailImage: "posts/post3-thumb.webp",
     slug: "hustle-culture-destroying-generation",
     featured: true
   },
@@ -60,7 +64,8 @@ export const posts: BlogPost[] = [
     date: "2025-11-12",
     readTime: readTime("not-overwhelmed-by-news"),
     category: "Recovery",
-    image: "/post4.webp",
+    image: "posts/post4.webp",
+    thumbnailImage: "posts/post4-thumb.webp",
     slug: "not-overwhelmed-by-news",
     featured: false
   },

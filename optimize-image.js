@@ -20,7 +20,7 @@ async function optimizeImages() {
     const postImages = files.filter(file => {
       const ext = file.substring(file.lastIndexOf('.')).toLowerCase();
       return IMAGE_EXTENSIONS.includes(ext) && 
-             (file.startsWith('post') || file.startsWith('social'));
+             (file.startsWith('post'));
     });
 
     console.log('🖼️  Imagens encontradas:', postImages.join(', '));

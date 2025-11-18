@@ -150,7 +150,7 @@ const getCategoryClasses = (cat: string) => {
             >
               <div class="aspect-video overflow-hidden">
                 <img 
-                  src={post.image} 
+                  src={post.thumbnailImage || post.image} 
                   alt={post.title}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
