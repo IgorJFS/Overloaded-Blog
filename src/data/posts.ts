@@ -24,7 +24,7 @@ export const posts: BlogPost[] = [
     date: "2025-11-02",
     readTime: readTime("reading-books-2025"),
     category: "Society",
-    image: "/post1.png",
+    image: "/post1.webp",
     slug: "reading-books-2025",
     featured: true
   },
@@ -60,7 +60,7 @@ export const posts: BlogPost[] = [
     date: "2025-11-12",
     readTime: readTime("not-overwhelmed-by-news"),
     category: "Recovery",
-    image: "/post4.jpg",
+    image: "/post4.webp",
     slug: "not-overwhelmed-by-news",
     featured: false
   },
