@@ -33,6 +33,7 @@ const socialImage = new URL(image, Astro.site);
 <html lang="en" class="dark">
   <head>
     <!-- Google tag (gtag.js) with Consent Mode -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KNSVR3KWG"></script>
     <script is:inline>
       // Initialize consent mode before GA loads
       window.dataLayer = window.dataLayer || [];
@@ -46,7 +47,10 @@ const socialImage = new URL(image, Astro.site);
       gtag('js', new Date());
       gtag('config', 'G-3KNSVR3KWG');
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KNSVR3KWG"></script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4588104331712052"
+         crossorigin="anonymous"></script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
