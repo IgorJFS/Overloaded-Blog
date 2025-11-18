@@ -45,7 +45,7 @@ const footerLinks = {
         <!-- About -->
         <div>
           <div class="flex items-center gap-2 mb-4">
-            <img src="/logoSemBg.png" alt="Overloaded" class="h-8 w-auto" />
+            <img src="/logoSemBg.webp" alt="Overloaded" class="h-8 w-8" />
             <span class="text-xl font-bold dark:text-neutral-100 light:text-neutral-900">Overloaded</span>
           </div>
           <p class="dark:text-neutral-400 light:text-neutral-600 text-sm leading-relaxed">
