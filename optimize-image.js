@@ -3,31 +3,30 @@ import sharp from 'sharp';
 import { readdir } from 'fs/promises';
 import { join } from 'path';
 
-const PUBLIC_DIR = './public';
+const POSTS_DIR = './public/posts';
 const IMAGE_EXTENSIONS = ['.webp', '.jpg', '.jpeg', '.png'];
 
 // Configurações de tamanhos
 const SIZES = {
   thumb: { width: 800, height: 450, suffix: '-thumb' },
-  hero: { width: 1200, height: 675, suffix: '-hero' },
 };
 
 async function optimizeImages() {
   try {
-    const files = await readdir(PUBLIC_DIR);
+    const files = await readdir(POSTS_DIR);
     
-    // Filtrar apenas imagens de posts (post1, post2, etc.) e social media
+    // Filtrar apenas imagens que começam com "post" seguido de número
     const postImages = files.filter(file => {
       const ext = file.substring(file.lastIndexOf('.')).toLowerCase();
       return IMAGE_EXTENSIONS.includes(ext) && 
-             (file.startsWith('post'));
+             file.startsWith('postx');
     });
 
     console.log('🖼️  Imagens encontradas:', postImages.join(', '));
     console.log('');
 
     for (const image of postImages) {
-      const inputPath = join(PUBLIC_DIR, image);
+      const inputPath = join(POSTS_DIR, image);
       const baseName = image.substring(0, image.lastIndexOf('.'));
       const ext = image.substring(image.lastIndexOf('.'));
 
@@ -38,7 +37,7 @@ async function optimizeImages() {
       console.log(`   Tamanho original: ${metadata.width}x${metadata.height}`);
 
       // Criar versão thumbnail (para cards)
-      const thumbPath = join(PUBLIC_DIR, `${baseName}${SIZES.thumb.suffix}${ext}`);
+      const thumbPath = join(POSTS_DIR, `${baseName}${SIZES.thumb.suffix}${ext}`);
       await sharp(inputPath)
         .resize(SIZES.thumb.width, SIZES.thumb.height, {
           fit: 'cover',
@@ -49,28 +48,14 @@ async function optimizeImages() {
       
       const thumbStats = await sharp(thumbPath).metadata();
       console.log(`   ✅ Thumb: ${thumbStats.width}x${thumbStats.height} → ${thumbPath.split('/').pop()}`);
-
-      // Criar versão hero (para posts completos)
-      const heroPath = join(PUBLIC_DIR, `${baseName}${SIZES.hero.suffix}${ext}`);
-      await sharp(inputPath)
-        .resize(SIZES.hero.width, SIZES.hero.height, {
-          fit: 'cover',
-          position: 'center',
-        })
-        .webp({ quality: 90 })
-        .toFile(heroPath);
-      
-      const heroStats = await sharp(heroPath).metadata();
-      console.log(`   ✅ Hero: ${heroStats.width}x${heroStats.height} → ${heroPath.split('/').pop()}`);
       console.log('');
     }
 
     console.log('✨ Otimização concluída!');
     console.log('');
     console.log('📝 Próximos passos:');
-    console.log('   1. Atualize posts.ts para usar as versões -thumb nos cards');
-    console.log('   2. As versões -hero serão usadas automaticamente nos posts completos');
-    console.log('   3. Delete as versões originais se não precisar mais (opcional)');
+    console.log('   1. As versões -thumb serão usadas nos cards e listagens');
+    console.log('   2. As versões originais (postX.webp) serão usadas nos posts completos');
 
   } catch (error) {
     console.error('❌ Erro:', error.message);
