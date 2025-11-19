@@ -19,30 +19,6 @@ Overloaded is a platform dedicated to honest conversations about:
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
 - **[pnpm](https://pnpm.io/)** - Fast, disk space efficient package manager
 
-## 📁 Project Structure
-
-```
-overloaded/
-├── public/              # Static assets
-│   └── favicon.svg
-├── src/
-│   ├── components/      # Vue components
-│   │   ├── Header.vue
-│   │   └── Footer.vue
-│   ├── layouts/         # Page layouts
-│   │   └── Layout.astro
-│   ├── pages/          # File-based routing
-│   │   ├── index.astro      # Homepage
-│   │   ├── about.astro      # About page
-│   │   ├── blog.astro       # Blog listing
-│   │   └── blog/
-│   │       └── [slug].astro # Dynamic blog posts
-│   └── styles/         # Global styles
-│       └── global.css
-├── astro.config.mjs    # Astro configuration
-├── tsconfig.json       # TypeScript configuration
-└── package.json
-```
 
 ## 🛠️ Getting Started
 
@@ -119,22 +95,6 @@ The color scheme is defined in `src/styles/global.css` using CSS custom properti
 4. Deploy! 🎉
 
 **See [VERCEL-DEPLOY.md](./VERCEL-DEPLOY.md) for detailed deployment instructions.**
-
-### Other Hosting Options
-
-Build the project for production:
-
-```bash
-pnpm build
-```
-
-The built site will be in the `./dist/` directory, ready to be deployed to:
-- ✅ **Vercel** (Recommended - Zero config)
-- Netlify
-- Cloudflare Pages
-- GitHub Pages
-- AWS S3 + CloudFront
-- Any static hosting service
 
 ## 🔍 SEO Features
 
