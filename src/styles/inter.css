@@ -1,0 +1,53 @@
+/* 300 - Light */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/inter/Inter-Light.woff2") format("woff2");
+}
+
+/* 400 - Regular */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter/Inter-Regular.woff2") format("woff2");
+}
+
+/* 500 - Medium */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/inter/Inter-Medium.woff2") format("woff2");
+}
+
+/* 600 - SemiBold */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter/Inter-SemiBold.woff2") format("woff2");
+}
+
+/* 700 - Bold */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/inter/Inter-Bold.woff2") format("woff2");
+}
+
+/* 800 - ExtraBold */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/inter/Inter-ExtraBold.woff2") format("woff2");
+}

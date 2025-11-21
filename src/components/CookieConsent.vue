@@ -99,28 +99,31 @@ function rejectCookies() {
 }
 
 function initializeGoogleAnalytics() {
-  // Check if gtag is available
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    // Grant consent
-    (window as any).gtag('consent', 'update', {
-      analytics_storage: 'granted'
-    });
-    
+  if (typeof window !== 'undefined') {
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push([
+      'consent',
+      'update',
+      { analytics_storage: 'granted' }
+    ]);
+
     console.log('Google Analytics enabled');
   }
 }
 
 function disableGoogleAnalytics() {
-  // Check if gtag is available
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    // Deny consent
-    (window as any).gtag('consent', 'update', {
-      analytics_storage: 'denied'
-    });
-    
+  if (typeof window !== 'undefined') {
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push([
+      'consent',
+      'update',
+      { analytics_storage: 'denied' }
+    ]);
+
     console.log('Google Analytics disabled');
   }
 }
+
 </script>
 
 <style scoped>
