@@ -3,7 +3,6 @@ import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import BackToTop from '../components/BackToTop.vue';
 import CookieConsent from '../components/CookieConsent.vue';
-import KofiButton from '../components/KofiButton.astro';
 import { siteConfig } from '../config/site';
 import  Analytics  from '@vercel/analytics/astro';
 import '../styles/global.css';
@@ -33,6 +32,13 @@ const socialImage = new URL(image, Astro.site);
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect for critical resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+    
     <!-- Google tag (gtag.js) with Consent Mode -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3KNSVR3KWG"></script>
     <script is:inline>
@@ -62,8 +68,6 @@ const socialImage = new URL(image, Astro.site);
       });
     </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-adsense-account" content="ca-pub-4588104331712052">
     
     <!-- Primary Meta Tags -->
