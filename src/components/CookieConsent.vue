@@ -35,13 +35,13 @@
             <div class="flex flex-col sm:flex-row gap-3 lg:shrink-0">
               <button
                 @click="rejectCookies"
-                class="px-6 py-3 rounded-full border dark:border-neutral-700 light:border-neutral-300 dark:text-neutral-300 light:text-neutral-700 dark:hover:bg-neutral-800 light:hover:bg-neutral-50 transition-colors font-medium"
+                class="px-6 py-3 rounded-full border dark:border-neutral-600 light:border-neutral-400 dark:text-neutral-300 light:text-neutral-700 dark:hover:bg-neutral-800 light:hover:bg-neutral-50 transition-colors font-semibold text-base"
               >
                 Reject
               </button>
               <button
                 @click="acceptCookies"
-                class="px-6 py-3 rounded-full bg-primary-500 hover:bg-primary-600 text-white transition-colors font-medium shadow-sm"
+                class="px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white transition-colors font-semibold shadow-lg text-base"
               >
                 Accept
               </button>

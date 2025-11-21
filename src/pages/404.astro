@@ -59,7 +59,7 @@ const featuredPosts = posts.filter(post => post.featured).slice(0, 3);
               class="group block light:bg-white dark:bg-white/5 rounded-xl overflow-hidden border light:border-gray-200 dark:border-white/10 hover:light:border-primary hover:dark:border-primary transition-all duration-300"
             >
               <div class="aspect-video overflow-hidden">
-                <img 
+                <Image
                   src={post.thumbnailImage || post.image} 
                   alt={post.title}
                   width={400}

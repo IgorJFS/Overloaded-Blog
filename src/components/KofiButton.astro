@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import kofiImage from '../../public/kofi.png';
+---
+
+<a 
+  href='https://ko-fi.com/M4M71JMEK9' 
+  target='_blank' 
+  rel="noopener noreferrer"
+  class="inline-block"
+>
+  <Image 
+    src={kofiImage}
+    alt='Buy Me a Coffee at ko-fi.com'
+    width={140}
+    height={36}
+    loading="lazy"
+    format="webp"
+  />
+</a>

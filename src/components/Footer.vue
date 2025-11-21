@@ -45,7 +45,7 @@ const footerLinks = {
         <!-- About -->
         <div>
           <div class="flex items-center gap-2 mb-4">
-            <img src="/logoSemBg.webp" alt="Overloaded" class="h-8 w-8" />
+            <img src="/logoSemBg.webp" alt="Overloaded Logo" class="h-8 w-8" />
             <span class="text-xl font-bold dark:text-neutral-100 light:text-neutral-900">Overloaded</span>
           </div>
           <p class="dark:text-neutral-400 light:text-neutral-600 text-sm leading-relaxed">
@@ -119,14 +119,16 @@ const footerLinks = {
       <!-- Bottom bar -->
       <div class="pt-8 border-t dark:border-neutral-800 light:border-neutral-200">
         <div class="flex flex-col justify-center items-center gap-4">
-          <!-- Ko-Fi Button -->
+          <!-- Ko-Fi Button (Astro component rendered as static HTML) -->
           <div class="mb-2">
             <a href='https://ko-fi.com/M4M71JMEK9' target='_blank' rel="noopener noreferrer">
               <img 
-                height='36' 
-                style='border:0px;height:36px;' 
-                src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' 
-                alt='Buy Me a Coffee at ko-fi.com' 
+                src="/kofi.webp"
+                alt='Buy Me a Coffee at ko-fi.com'
+                width="140"
+                height="36"
+                loading="lazy"
+                style="border:0px;height:36px;"
               />
             </a>
           </div>
