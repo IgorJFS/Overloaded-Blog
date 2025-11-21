@@ -8,7 +8,7 @@ const IMAGE_EXTENSIONS = ['.webp', '.jpg', '.jpeg', '.png'];
 
 // Configurações de tamanhos
 const SIZES = {
-  thumb: { width: 800, height: 450, suffix: '-thumb' },
+  thumb: { width: 662, height: 372, suffix: '-thumb' },
 };
 
 async function optimizeImages() {
