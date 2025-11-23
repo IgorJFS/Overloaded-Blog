@@ -66,7 +66,20 @@ export const posts: BlogPost[] = [
     category: "Recovery",
     image: "/posts/post4.webp",
     thumbnailImage: "/posts/post4-thumb.webp",
-    slug: "not-overwhelmed-by-news",
+    slug: "understanding-burnout-2025",
     featured: false
   },
+  {
+    id: 5,
+    title: "Negativity: The Modern Mental Drug",
+    excerpt: "Why does it feel like the world is ending every time you open your phone?",
+    description: "Why does it feel like the world is ending every time you open your phone? Discover why negativity is addictive, how it distorts your reality, and why your mental state is worsening even while your daily life remains unchanged.",
+    date: "2025-11-23",
+    readTime: readTime("negativity-modern-mental-drug"),
+    category: "Mental Health",
+    image: "/posts/post2.webp",
+    thumbnailImage: "/posts/post2-thumb.webp",
+    slug: "negativity-modern-mental-drug",
+    featured: true
+  }
 ];
