@@ -77,9 +77,9 @@ export const posts: BlogPost[] = [
     date: "2025-11-23",
     readTime: readTime("negativity-modern-mental-drug"),
     category: "Mental Health",
-    image: "/posts/post2.webp",
-    thumbnailImage: "/posts/post2-thumb.webp",
+    image: "/posts/post5.webp",
+    thumbnailImage: "/posts/post5-thumb.webp",
     slug: "negativity-modern-mental-drug",
-    featured: true
+    featured: false
   }
 ];

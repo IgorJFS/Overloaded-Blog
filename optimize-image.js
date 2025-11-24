@@ -3,7 +3,7 @@ import sharp from 'sharp';
 import { readdir } from 'fs/promises';
 import { join } from 'path';
 
-const POSTS_DIR = './public/posts';
+const POSTS_DIR = './public/non-optimized';
 const IMAGE_EXTENSIONS = ['.webp', '.jpg', '.jpeg', '.png'];
 
 // Configurações de tamanhos
@@ -19,7 +19,7 @@ async function optimizeImages() {
     const postImages = files.filter(file => {
       const ext = file.substring(file.lastIndexOf('.')).toLowerCase();
       return IMAGE_EXTENSIONS.includes(ext) && 
-             file.startsWith('postx');
+             file.startsWith('post');
     });
 
     console.log('🖼️  Imagens encontradas:', postImages.join(', '));
