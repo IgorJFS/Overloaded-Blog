@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
-import LoadingSpinner from './LoadingSpinner.vue';
 
 interface BlogPost {
   id: number;
@@ -24,10 +23,11 @@ const props = defineProps<Props>();
 const selectedCategory = ref('All');
 
 const filteredPosts = computed(() => {
-  if (selectedCategory.value === 'All') {
-    return props.posts;
-  }
-  return props.posts.filter(post => post.category === selectedCategory.value);
+  const posts = selectedCategory.value === 'All'
+    ? props.posts
+    : props.posts.filter(post => post.category === selectedCategory.value);
+
+  return [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 });
 
 const formatDate = (dateString: string) => {
