@@ -66,7 +66,7 @@ export const posts: BlogPost[] = [
     category: "Recovery",
     image: "/posts/post4.webp",
     thumbnailImage: "/posts/post4-thumb.webp",
-    slug: "understanding-burnout-2025",
+    slug: "not-overwhelmed-by-news",
     featured: false
   },
   {
