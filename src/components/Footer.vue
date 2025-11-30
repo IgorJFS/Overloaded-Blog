@@ -28,6 +28,7 @@ const navigationLinks = [
   { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const footerLinks = {
@@ -118,21 +119,7 @@ const footerLinks = {
 
       <!-- Bottom bar -->
       <div class="pt-8 border-t dark:border-neutral-800 light:border-neutral-200">
-        <div class="flex flex-col justify-center items-center gap-4">
-          <!-- Ko-Fi Button (Astro component rendered as static HTML) -->
-          <div class="mb-2">
-            <a href='https://ko-fi.com/M4M71JMEK9' target='_blank' rel="noopener noreferrer">
-              <img 
-                src="/kofi.webp"
-                alt='Buy Me a Coffee at ko-fi.com'
-                width="140"
-                height="36"
-                loading="lazy"
-                style="border:0px;height:36px;"
-              />
-            </a>
-          </div>
-          
+        <div class="flex flex-col justify-center items-center gap-4">  
           <p class="dark:text-neutral-500 light:text-neutral-600 text-sm">
             &copy; {{ currentYear }} Overloaded. All rights reserved.
           </p>
