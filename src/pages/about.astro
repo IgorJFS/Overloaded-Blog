@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Flame, Brain, Scale, Globe } from 'lucide-vue-next';
+import { Flame, Brain, Scale, Globe } from 'lucide-astro';
 ---
 
 <Layout title="About" description="Learn more about Overloaded and our mission to discuss burnout, mental health, and work-life balance.">
@@ -35,7 +35,7 @@ import { Flame, Brain, Scale, Globe } from 'lucide-vue-next';
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <div class="shrink-0 mt-1">
-                  <Flame size={24} strokeWidth={2} class="text-red-500" client:load />
+                  <Flame size={24} strokeWidth={2} class="text-red-500" />
                 </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Burnout Recognition & Recovery</h3>
@@ -44,7 +44,7 @@ import { Flame, Brain, Scale, Globe } from 'lucide-vue-next';
               </li>
               <li class="flex items-start gap-3">
                 <div class="shrink-0 mt-1">
-                  <Brain size={24} strokeWidth={2} class="text-purple-500" client:load />
+                  <Brain size={24} strokeWidth={2} class="text-purple-500" />
                 </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Mental Health Awareness</h3>
@@ -53,7 +53,7 @@ import { Flame, Brain, Scale, Globe } from 'lucide-vue-next';
               </li>
               <li class="flex items-start gap-3">
                 <div class="shrink-0 mt-1">
-                  <Scale size={24} strokeWidth={2} class="text-blue-500" client:load />
+                  <Scale size={24} strokeWidth={2} class="text-blue-500" />
                 </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Work-Life Integration</h3>
@@ -62,7 +62,7 @@ import { Flame, Brain, Scale, Globe } from 'lucide-vue-next';
               </li>
               <li class="flex items-start gap-3">
                 <div class="shrink-0 mt-1">
-                  <Globe size={24} strokeWidth={2} class="text-green-500" client:load />
+                  <Globe size={24} strokeWidth={2} class="text-green-500" />
                 </div>
                 <div>
                   <h3 class="dark:text-neutral-100 light:text-neutral-900 font-semibold mb-1">Societal Challenges</h3>

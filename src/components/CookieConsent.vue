@@ -99,28 +99,18 @@ function rejectCookies() {
 }
 
 function initializeGoogleAnalytics() {
-  if (typeof window !== 'undefined') {
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).dataLayer.push([
-      'consent',
-      'update',
-      { analytics_storage: 'granted' }
-    ]);
-
-    console.log('Google Analytics enabled');
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('consent', 'update', {
+      'analytics_storage': 'granted'
+    });
   }
 }
 
 function disableGoogleAnalytics() {
-  if (typeof window !== 'undefined') {
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).dataLayer.push([
-      'consent',
-      'update',
-      { analytics_storage: 'denied' }
-    ]);
-
-    console.log('Google Analytics disabled');
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    (window as any).gtag('consent', 'update', {
+      'analytics_storage': 'denied'
+    });
   }
 }
 

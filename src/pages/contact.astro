@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Mail, MessageSquare } from 'lucide-vue-next';
+import { Mail, MessageSquare } from 'lucide-astro';
 ---
 
 <Layout 
@@ -25,7 +25,7 @@ import { Mail, MessageSquare } from 'lucide-vue-next';
         <div class="p-8 rounded-2xl dark:bg-neutral-900/50 light:bg-white border dark:border-neutral-800 light:border-neutral-200 shadow-sm text-center">
           <div class="flex justify-center mb-4">
             <div class="p-4 rounded-full dark:bg-primary-500/10 light:bg-primary-100">
-              <Mail size={32} strokeWidth={1.5} class="text-primary-500" client:load />
+              <Mail size={32} stroke-width={1.5} class="text-primary-500" />
             </div>
           </div>
           <h2 class="text-xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-2">Email</h2>
@@ -44,7 +44,7 @@ import { Mail, MessageSquare } from 'lucide-vue-next';
         <div class="p-8 rounded-2xl dark:bg-neutral-900/50 light:bg-white border dark:border-neutral-800 light:border-neutral-200 shadow-sm text-center">
           <div class="flex justify-center mb-4">
             <div class="p-4 rounded-full dark:bg-emerald-500/10 light:bg-emerald-100">
-              <MessageSquare size={32} strokeWidth={1.5} class="text-emerald-500" client:load />
+              <MessageSquare size={32} stroke-width={1.5} class="text-emerald-500" />
             </div>
           </div>
           <h2 class="text-xl font-bold dark:text-neutral-100 light:text-neutral-900 mb-2">Feedback</h2>
