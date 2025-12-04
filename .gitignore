@@ -39,3 +39,4 @@ coverage/
 
 # Internal Documentation (not for public)
 BLOG-WRITING-GUIDE.md
+public/non-optimized/
