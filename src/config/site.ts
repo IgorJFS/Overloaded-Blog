@@ -2,17 +2,16 @@ export const siteConfig = {
   name: 'Overloaded',
   description: "A modern space for discussing burnout, mental health, and the challenges facing today's society.",
   url: 'https://www.overloaded.live/',
-  ogImage: '/logo.png', // Default social media share image
+  ogImage: './logo.png',
   links: {
-    twitter: 'https://twitter.com/overloaded',
-    github: 'https://github.com/yourusername/overloaded',
+    github: 'https://github.com/IgorJFS/Overloaded-Blog',
   },
   languages: {
     default: 'en',
     supported: ['en', 'pt'],
   },
   author: {
-    name: 'Overloaded Team',
-    email: 'contact@overloaded.blog',
+    name: 'Igor',
+    email: 'igormp.dev@gmail.com',
   },
 };
