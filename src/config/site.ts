@@ -14,4 +14,8 @@ export const siteConfig = {
     name: 'Igor',
     email: 'igormp.dev@gmail.com',
   },
+  // Analytics - Supabase Edge Function endpoint
+  analytics: {
+    trackReadEndpoint: 'https://mkmxiqwsqqzetklkyazw.supabase.co/functions/v1/track-read',
+  },
 };

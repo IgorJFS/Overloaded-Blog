@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import { posts } from '../data/posts';
 import { siteConfig } from '../config/site';
+import ReadTracker from '../components/ReadTracker.vue';
 
 // Get slug from frontmatter or URL
 const frontmatter = Astro.props.frontmatter || Astro.props;
@@ -128,6 +129,9 @@ const getCategoryClasses = (cat: string) => {
       <div class="blog-content">
         <slot />
       </div>
+
+      <!-- Read Tracker - fires when reader reaches the end -->
+      <ReadTracker client:only="vue" postId={slug} />
 
 
       <!-- Related Posts -->
