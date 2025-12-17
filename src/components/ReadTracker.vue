@@ -4,10 +4,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import { siteConfig } from '../config/site';
 
 interface Props {
   postId: string;
+  endpoint: string;
+  apiKey: string;
 }
 
 const props = defineProps<Props>();
@@ -21,10 +22,12 @@ const trackRead = async () => {
   hasTracked = true;
 
   try {
-    await fetch(siteConfig.analytics.trackReadEndpoint, {
+    await fetch(props.endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'apikey': props.apiKey,
+        'Authorization': `Bearer ${props.apiKey}`,
       },
       body: JSON.stringify({
         post_id: props.postId,
@@ -48,7 +51,7 @@ onMounted(() => {
       });
     },
     {
-      threshold: 0.5, // Trigger when 50% of element is visible
+      threshold: 0.1,
       rootMargin: '0px',
     }
   );
@@ -65,7 +68,7 @@ onUnmounted(() => {
 
 <style scoped>
 .read-tracker {
-  height: 1px;
+  height: 10px;
   width: 100%;
   pointer-events: none;
 }

@@ -17,5 +17,6 @@ export const siteConfig = {
   // Analytics - Supabase Edge Function endpoint
   analytics: {
     trackReadEndpoint: 'https://mkmxiqwsqqzetklkyazw.supabase.co/functions/v1/track-read',
+    supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1rbXhpcXdzcXF6ZXRrbGt5YXp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU5NTQ3MDUsImV4cCI6MjA4MTUzMDcwNX0.wh5FBvG6AWwrC81kUFVMHeXwZGaLpfpNrgbL-3YnhoI',
   },
 };
