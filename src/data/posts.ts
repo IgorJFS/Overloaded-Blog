@@ -81,5 +81,18 @@ export const posts: BlogPost[] = [
     thumbnailImage: "/posts/post5-thumb.webp",
     slug: "negativity-modern-mental-drug",
     featured: false
+  },
+  {
+    id: 6,
+    title: "The Monkey Theory: they are more intelligent than humans",
+    excerpt: "Monkeys aren't less evolved than us. They are smarter because they knew exactly where to stop.",
+    description: "Explore The Monkey Theory: the idea that monkeys stayed in the trees to avoid taxes and existential dread. A witty look at why 'civilization' might be a trap and how to reclaim the wisdom of 'enough'.",
+    date: "2025-12-25",
+    readTime: readTime("the-monkey-theory"),
+    category: "Society",
+    image: "/posts/post6.webp",
+    thumbnailImage: "/posts/post6-thumb.webp",
+    slug: "the-monkey-theory",
+    featured: true
   }
 ];
