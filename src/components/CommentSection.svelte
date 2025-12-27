@@ -2,7 +2,7 @@
   // export let postId: string; // To be used when integrating with Supabase
   
   // Toggle this to enable/disable comments
-  const COMMENTS_ENABLED = true;
+  const COMMENTS_ENABLED = false;
   const MAX_COMMENT_LENGTH = 500;
   
   interface Comment {
