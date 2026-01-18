@@ -20,7 +20,6 @@ A modern blog focused on discussing burnout, mental health, and the challenges f
 Overloaded is a platform dedicated to honest, critical conversations about:
 - 🔥 **Burnout Recognition & Recovery**
 - 🧠 **Mental Health Awareness**
-- ⚖️ **Work-Life Balance**
 - 🌍 **Societal Challenges**
 
 The blog takes a cold, clinical approach to modern problems — no sugar-coating, just data-backed analysis.

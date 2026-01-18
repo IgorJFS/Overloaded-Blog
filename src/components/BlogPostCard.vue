@@ -20,7 +20,6 @@ const getCategoryClasses = (category: string) => {
   const categoryMap: Record<string, string> = {
     'Burnout': 'bg-red-100 dark:bg-red-500/10 text-red-600 dark:text-red-400',
     'Mental Health': 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
-    'Work-Life Balance': 'bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400',
     'Work Culture': 'bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400',
     'Society': 'bg-violet-100 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400',
     'Recovery': 'bg-teal-100 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400',

@@ -9,7 +9,7 @@ interface BlogPost {
   description: string;
   date: string;
   readTime: string;
-  category: "Burnout" | "Mental Health" | "Work Culture" | "Society" | "Work-Life Balance" | "Recovery";
+  category: "Burnout" | "Mental Health" | "Work Culture" | "Society" | "Recovery";
   image: string; // Full-size image for post pages
   thumbnailImage?: string; // Optional thumbnail for cards
   slug: string;
