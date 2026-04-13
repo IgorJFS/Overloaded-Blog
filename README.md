@@ -38,37 +38,6 @@ This project also serves as a **learning playground** to experiment with multipl
 | **[TypeScript](https://www.typescriptlang.org/)** | Type safety |
 | **[Vercel](https://vercel.com/)** | Hosting & deployment |
 
-## 🛠️ Getting Started
-
-### Prerequisites
-
-- Node.js 20+ 
-- pnpm (recommended)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/IgorJFS/Overloaded-Blog.git
-cd overloaded
-
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-```
-
-Open your browser at `http://localhost:4321`
-
-## 📝 Commands
-
-| Command | Action |
-|---------|--------|
-| `pnpm dev` | Start dev server at `localhost:4321` |
-| `pnpm build` | Build production site to `./dist/` |
-| `pnpm preview` | Preview production build locally |
-
 ## ✨ Features
 
 ### Core
@@ -95,27 +64,6 @@ Open your browser at `http://localhost:4321`
 - ✅ Cookie consent with Google Consent Mode
 - ✅ Privacy Policy & Terms of Service
 - ✅ GDPR-ready
-
-## 📁 Project Structure
-
-```
-src/
-├── components/      # Vue & Svelte components
-├── config/          # Site configuration
-├── data/            # Blog posts metadata
-├── layouts/         # Astro layouts
-├── pages/           # Routes & MDX blog posts
-│   └── blog/        # Blog post files (.mdx)
-├── styles/          # Global CSS
-├── types/           # TypeScript types
-└── utils/           # Utility functions
-```
-
-## 🚀 Deployment
-
-The site is deployed on **Vercel** with automatic deployments on push to `main`.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/IgorJFS/Overloaded-Blog)
 
 ## 📄 License
 
